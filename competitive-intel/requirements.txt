@@ -1,0 +1,2 @@
+# Competitive Intelligence Module Requirements
+requests>=2.31.0
