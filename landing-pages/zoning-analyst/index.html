@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoning Analyst Pro™ - Know Your Development Strategy in 15 Minutes</title>
+    <meta name="description" content="AI-powered highest and best use analysis for land developers. Get comprehensive zoning reports in 15 minutes, not 15 days.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Zoning Analyst Pro™ - 15 Minute Development Analysis">
+    <meta property="og:description" content="AI-powered highest and best use analysis for land developers">
+    <meta property="og:type" content="website">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1E3A5F;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1E3A5F 0%, #2E5090 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero h1 .highlight {
+            color: #4CAF50;
+        }
+        
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        /* CTA Buttons */
+        .cta-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            padding: 18px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        
+        .btn-primary {
+            background: #4CAF50;
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #1E3A5F;
+        }
+        
+        .btn-tertiary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        /* Social Proof */
+        .social-proof {
+            margin-top: 40px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 60px;
+            color: #1E3A5F;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature-card {
+            padding: 30px;
+            border-radius: 12px;
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+        }
+        
+        .feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #2E5090;
+        }
+        
+        .feature-card p {
+            font-size: 16px;
+            color: #666;
+        }
+        
+        /* Problem Section */
+        .problem {
+            padding: 80px 0;
+            background: #fff5f5;
+        }
+        
+        .problem h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #c62828;
+        }
+        
+        .problem-list {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+        
+        .problem-list li {
+            margin-bottom: 20px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .problem-list li::before {
+            content: "❌";
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Solution Section */
+        .solution {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .solution h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #1E3A5F;
+        }
+        
+        .solution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .solution-item {
+            padding: 30px;
+            background: #e8f5e9;
+            border-radius: 12px;
+        }
+        
+        .solution-item h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #2e7d32;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .pricing h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 60px;
+            color: #1E3A5F;
+        }
+        
+        .price-card {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 40px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .price-card .price {
+            font-size: 48px;
+            font-weight: 700;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+        
+        .price-card .per {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .price-card ul {
+            text-align: left;
+            margin-bottom: 30px;
+            list-style: none;
+        }
+        
+        .price-card li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .price-card li::before {
+            content: "✓ ";
+            color: #4CAF50;
+            font-weight: 700;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .faq h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 60px;
+            color: #1E3A5F;
+        }
+        
+        .faq-item {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .faq-item h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #2E5090;
+        }
+        
+        .faq-item p {
+            font-size: 16px;
+            color: #666;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1E3A5F;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .cta-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .solution-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">🎯 Zoning Analyst Pro™</div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Know the Optimal Development Strategy in <span class="highlight">15 Minutes</span>, Not 15 Days</h1>
+            <p>AI-powered highest and best use analysis for land developers</p>
+            
+            <div class="cta-container">
+                <a href="#pricing" class="btn btn-primary" onclick="trackCTA('primary', 'Analyze My Property ($297)')">Analyze My Property ($297)</a>
+                <a href="#demo" class="btn btn-secondary" onclick="trackCTA('secondary', 'See Sample Report')">See Sample Report</a>
+                <a href="#guide" class="btn btn-tertiary" onclick="trackCTA('tertiary', 'Download Free Guide')">Download Free Guide</a>
+            </div>
+            
+            <div class="social-proof">
+                ✓ Trusted by Florida land developers  •  ✓ 15-minute analysis  •  ✓ XGBoost AI predictions
+            </div>
+        </div>
+    </section>
+    
+    <section class="problem">
+        <div class="container">
+            <h2>The Problem with Traditional Zoning Analysis</h2>
+            <ul class="problem-list">
+                <li><strong>Takes 15+ days:</strong> Waiting for consultants delays projects and increases carrying costs</li>
+                <li><strong>Costs $2,500-$5,000:</strong> Expensive reports that often tell you what you already know</li>
+                <li><strong>Guesswork on optimal use:</strong> No data-driven recommendations on highest ROI development</li>
+                <li><strong>Mistakes are costly:</strong> Wrong zoning assumptions = failed projects and lost capital</li>
+            </ul>
+        </div>
+    </section>
+    
+    <section class="solution">
+        <div class="container">
+            <h2>How Zoning Analyst Pro™ Solves This</h2>
+            <div class="solution-grid">
+                <div class="solution-item">
+                    <h3>⚡ 100x Faster</h3>
+                    <p>Get comprehensive zoning analysis in 15 minutes, not 15 days. Make faster decisions, reduce carrying costs.</p>
+                </div>
+                <div class="solution-item">
+                    <h3>💰 90% Cheaper</h3>
+                    <p>$297 per report vs $2,500-$5,000 for traditional consultants. Same depth, fraction of the cost.</p>
+                </div>
+                <div class="solution-item">
+                    <h3>🎯 AI-Powered Recommendations</h3>
+                    <p>XGBoost machine learning analyzes 1,000+ comparable developments to predict highest ROI use case.</p>
+                </div>
+                <div class="solution-item">
+                    <h3>📊 Complete Pro Forma</h3>
+                    <p>Full financial analysis including development costs, revenue projections, and ROI calculations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="features">
+        <div class="container">
+            <h2>What's Included in Every Report</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🗺️ Zoning Analysis</h3>
+                    <p>Complete breakdown of current zoning, permitted uses, setbacks, density requirements, and overlay districts.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📍 Demographics & Market</h3>
+                    <p>Census data, income levels, population trends, and absorption rates for your target market.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🏘️ Comparable Analysis</h3>
+                    <p>Recent sales and developments in the area with pricing, unit mix, and performance data.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🤖 XGBoost Predictions</h3>
+                    <p>AI-powered highest and best use recommendation with confidence score and supporting data.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💵 Financial Pro Forma</h3>
+                    <p>10-year revenue projections, development costs, ROI analysis, and sensitivity scenarios.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>⚠️ Risk Assessment</h3>
+                    <p>Permitting probability, infrastructure challenges, environmental considerations, and mitigation strategies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2>Simple, Transparent Pricing</h2>
+            <div class="price-card">
+                <div class="price">$297</div>
+                <div class="per">per property analysis</div>
+                <ul>
+                    <li>15-minute delivery</li>
+                    <li>25-page comprehensive report</li>
+                    <li>Zoning + Demographics + CMA</li>
+                    <li>XGBoost AI predictions</li>
+                    <li>Financial pro forma</li>
+                    <li>Risk assessment</li>
+                    <li>PDF + editable Excel</li>
+                </ul>
+                <a href="mailto:brevardbidderai@gmail.com?subject=Zoning%20Analysis%20Request" class="btn btn-primary" onclick="trackCTA('primary', 'Order Now')">Order Your Analysis</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <h3>How accurate are the XGBoost predictions?</h3>
+                <p>Our ML model is trained on 1,000+ Florida land developments with 87% prediction accuracy. We show confidence scores and supporting data for every recommendation.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>What areas do you cover?</h3>
+                <p>Currently covering Brevard, Orange, Seminole, and Osceola counties in Central Florida. Expanding to additional Florida counties in 2026.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>How is this different from a consultant?</h3>
+                <p>We're 100x faster (15 min vs 15 days) and 90% cheaper ($297 vs $2,500+). Same comprehensive analysis, powered by AI instead of manual research.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Can I see a sample report?</h3>
+                <p>Yes! We've analyzed the Bliss Palm Bay project (Parcel 2835546). <a href="mailto:brevardbidderai@gmail.com?subject=Sample%20Report%20Request">Email us</a> for the full sample report.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>What if I need analysis for multiple parcels?</h3>
+                <p>Volume discounts available: 5+ parcels = $247/each, 10+ parcels = $197/each. Contact us for custom pricing.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="hero" style="padding: 60px 0;">
+        <div class="container">
+            <h2 style="margin-bottom: 20px;">Ready to Know Your Optimal Development Strategy?</h2>
+            <p style="margin-bottom: 30px;">Get your comprehensive zoning analysis in 15 minutes</p>
+            <a href="mailto:brevardbidderai@gmail.com?subject=Zoning%20Analysis%20Request" class="btn btn-primary" onclick="trackCTA('primary', 'Get Started Now')">Get Started Now</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Zoning Analyst Pro™ by <a href="https://biddeed.ai">BidDeed.AI</a></p>
+            <p style="margin-top: 10px; font-size: 14px;">
+                Everest Capital USA  •  Florida Real Estate Investment Intelligence
+            </p>
+        </div>
+    </footer>
+    
+    <script>
+        // Analytics tracking
+        function trackCTA(tier, ctaText) {
+            console.log(`CTA Click: ${tier} - ${ctaText}`);
+            
+            // Send to analytics (Google Analytics, Supabase, etc.)
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'cta_click', {
+                    'event_category': 'engagement',
+                    'event_label': `${tier}: ${ctaText}`,
+                    'value': tier === 'primary' ? 3 : tier === 'secondary' ? 2 : 1
+                });
+            }
+            
+            // Send to Supabase (implement when backend ready)
+            // fetch('/api/track-cta', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify({
+            //         tool: 'Zoning Analyst',
+            //         cta_tier: tier,
+            //         cta_text: ctaText,
+            //         timestamp: new Date().toISOString()
+            //     })
+            // });
+        }
+        
+        // Track page view
+        window.addEventListener('load', function() {
+            console.log('Page loaded: Zoning Analyst Pro landing page');
+            
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'page_view', {
+                    'page_title': 'Zoning Analyst Pro',
+                    'page_location': window.location.href
+                });
+            }
+        });
+        
+        // Track scroll depth
+        let scrollDepth = 0;
+        window.addEventListener('scroll', function() {
+            const currentScroll = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight;
+            const currentDepth = Math.floor(currentScroll * 4) * 25; // 0%, 25%, 50%, 75%, 100%
+            
+            if (currentDepth > scrollDepth) {
+                scrollDepth = currentDepth;
+                console.log(`Scroll depth: ${scrollDepth}%`);
+                
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'scroll', {
+                        'event_category': 'engagement',
+                        'event_label': `${scrollDepth}%`,
+                        'value': scrollDepth
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
